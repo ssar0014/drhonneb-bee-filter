@@ -6,11 +6,7 @@ from config import S3_BUCKET, S3_KEY, S3_SECRET
 
 import numpy as np
 import fastai
-from fastai.vision import *
-from fastai.vision import transform
-from fastai.vision.data import *
-from fastai.vision.image import *
-from fastai.vision import data
+from fastai.vision import image, load_learner, open_image
 
 global s3
 s3 = boto3.resource('s3', aws_access_key_id=S3_KEY, aws_secret_access_key=S3_SECRET)
