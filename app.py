@@ -5,7 +5,6 @@ import boto3
 from config import S3_BUCKET, S3_KEY, S3_SECRET
 
 import numpy as np
-import fastai
 from fastai.vision import image, load_learner, open_image
 
 global s3
@@ -19,7 +18,7 @@ global bee_flag
 
 def bee_not_not():
     image_file = s3.Bucket(S3_BUCKET).download_file('public/user_photo.png', '/tmp/user_photo.png')
-    filename = '/tmp/user_photo.png'
+    filename = 'user_photo.jpg'
     im = open_image(filename)
     learner.precompute=False # We'll pass in a raw image, not activations
     preds = learner.predict(im)
