@@ -18,7 +18,7 @@ global bee_flag
 
 def bee_not_not():
     image_file = s3.Bucket(S3_BUCKET).download_file('public/user_photo.png', '/tmp/user_photo.png')
-    filename = '/tmp/user_photo.jpg'
+    filename = '/tmp/user_photo.png'
     im = open_image(filename)
     learner.precompute=False # We'll pass in a raw image, not activations
     preds = learner.predict(im)
